@@ -4,21 +4,20 @@ body {
   line-height: 1;
 }
 
-textarea{
-  background: transparent;
+.textarea{
+  background: rgb(238, 238, 238);
   border: none;
-  resize: none;
-  color: #000000;
   border-left: 1px solid black;
-  padding: 10px;
-  width: 85%;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  /* padding: 10px; */
+  
+  height: 80px;
 }
 
 .container {
-  padding:5rem;
-  width: 100%;
-  margin-left: auto;
-  margin-right:auto
+  
+
 }
 
 .jumbotron {
@@ -49,7 +48,7 @@ textarea{
   color: #000000;
   border-top: 1px dashed #000000;
   text-align: right;
-  width: 4rem;
+  /* width: 4rem; */
   padding-top: 2rem;
 }
 
@@ -73,11 +72,13 @@ textarea{
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
-  color: white;
-  width: auto;
+  color: rgb(255, 255, 255);
+  width: 85px;
+  height: 80px;
 }
 
-.saveBtn i:hover {
-  font-size: 20px;
+.saveBtn:hover {
+  background-color: #086fab;
+  font-size: 25px;
   transition: all .3s ease-in-out;
 }

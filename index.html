@@ -22,57 +22,63 @@
   <div class="container">
     <!-- Timeblocks go here -->
     <div class="row">
-      <div class="hour">9AM</div>
-      <textarea name="" id="" cols="" rows="4"></textarea>
-      <button class="saveBtn">Save</button>
-    </div>
-    <div class="row">
-      <div class="hour">10AM</div>
-      <textarea name="" id="" cols="80" rows="4"></textarea>
-      <button class="saveBtn">Save</button>
-    </div>
-    <div class="row">
-      <div class="hour">11AM</div>
-      <textarea name="" id="" cols="80" rows="4"></textarea>
-      <button class="saveBtn">Save</button>
-    </div>
-    <div class="row">
-      <div class="hour">12PM</div>
-      <textarea name="" id="" cols="80" rows="4"></textarea>
-      <button class="saveBtn">Save</button>
-    </div>
-    <div class="row">
-      <div class="hour">1PM</div>
-      <textarea name="" id="" cols="80" rows="4"></textarea>
-      <button class="saveBtn">Save</button>
-    </div>
-    <div class="row">
-      <div class="hour">2PM</div>
-      <textarea name="" id="" cols="80" rows="4"></textarea>
-      <button class="saveBtn">Save</button>
-    </div>
-    <div class="row">
-      <div class="hour">3PM</div>
-      <textarea name="" id="" cols="80" rows="4"></textarea>
-      <button class="saveBtn">Save</button>
-    </div>
-    <div class="row">
-      <div class="hour">4PM</div>
-      <textarea name="" id="" cols="80" rows="4"></textarea>
-      <button class="saveBtn">Save</button>
-    </div>
-    <div class="row">
-      <div class="hour">5PM</div>
-      <textarea name="" id="" cols="80" rows="4"></textarea>
-      <button class="saveBtn">Save</button>
+      <div class="col-lg-2 hour">9AM</div>
+      <div class="col-lg-8"><input data-input="" id="inputText${i}" class="form-control textarea" type="text"
+          name="userInput"></div>
+      <div class="col-lg-2"><button class="saveBtn" data-id="99" id="save"><i class="fa fa-save"></i></button></div>
+
+      <div class="col-lg-2 hour">10AM</div>
+      <div class="col-lg-8"><input data-input="${i}" id="inputText${i}" class="form-control textarea" type="text"
+          name="userInput"></div>
+      <div class="col-lg-2"><button class="saveBtn" data-id="10" id="save"><i class="fa fa-save"></i></button></div>
+
+      <div class="col-lg-2 hour">11AM</div>
+      <div class="col-lg-8"><input data-input="${i}" id="inputText${i}" class="form-control textarea" type="text"
+          name="userInput"></div>
+      <div class="col-lg-2"><button class="saveBtn" data-id="11" id="save"><i class="fa fa-save"></i></button></div>
+
+      <div class="col-lg-2 hour">12PM</div>
+      <div class="col-lg-8"><input data-input="${i}" id="inputText${i}" class="form-control textarea" type="text"
+          name="userInput"></div>
+      <div class="col-lg-2"><button class="saveBtn" data-id="12" id="save"><i class="fa fa-save"></i></button></div>
+
+      <div class="col-lg-2 hour">1PM</div>
+      <div class="col-lg-8"><input data-input="${i}" id="inputText${i}" class="form-control textarea" type="text"
+          name="userInput"></div>
+      <div class="col-lg-2"><button class="saveBtn" data-id="13" id="save"><i class="fa fa-save"></i></button></div>
+
+      <div class="col-lg-2 hour">2PM</div>
+      <div class="col-lg-8"><input data-input="${i}" id="inputText${i}" class="form-control textarea" type="text"
+          name="userInput"></div>
+      <div class="col-lg-2"><button class="saveBtn" data-id="14" id="save"><i class="fa fa-save"></i></button></div>
+
+      <div class="col-lg-2 hour">3PM</div>
+      <div class="col-lg-8"><input data-input="${i}" id="inputText${i}" class="form-control textarea" type="text"
+          name="userInput"></div>
+      <div class="col-lg-2"><button class="saveBtn" data-id="15" id="save"><i class="fa fa-save"></i></button></div>
+
+      <div class="col-lg-2 hour">4PM</div>
+      <div class="col-lg-8"><input data-input="${i}" id="inputText${i}" class="form-control textarea" type="text"
+          name="userInput"></div>
+      <div class="col-lg-2"><button class="saveBtn" data-id="16" id="save"><i class="fa fa-save"></i></button></div>
+
+      <div class="col-lg-2 hour">5PM</div>
+      <div class="col-lg-8"><input data-input="${i}" id="inputText${i}" class="form-control textarea" type="text"
+          name="userInput"></div>
+      <div class="col-lg-2"><button class="saveBtn" data-id="17" id="save"><i class="fa fa-save"></i></button></div>
+
+      <div class="col-lg-2 hour">6PM</div>
+      <div class="col-lg-8"><input data-input="${i}" id="inputText${i}" class="form-control textarea" type="text"
+          name="userInput"></div>
+      <div class="col-lg-2"><button class="saveBtn" data-id="18" id="save"><i class="fa fa-save"></i></button></div>
+
+
     </div>
 
-  </div>
 
-
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-  <script src="./assets/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="./assets/script.js"></script>
 </body>
 
 </html>
