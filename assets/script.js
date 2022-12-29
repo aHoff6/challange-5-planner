@@ -1,30 +1,81 @@
 const currentDayEl = $("#currentDay");
-const currentTime = moment().format('MMMM Do YYYY, h:mm:ss a');
-const currentHour = moment().hour();
-console.log(currentHour);
+const currentDayAndTime = moment().format("MMMM Do YYYY, h:mm:ss a");
+// const currentHour = moment().format("HH");
+// console.log(currentHour);
+
+// const timeBlocks = [];
 
 
 
-setInterval(function() {
-    currentDayEl.text(currentTime);
-}, 1000)
-    
-    
 
 
-$(".saveBtn").click(function() {
-    var id = $(this).data("id")
-    var inputText = $(this).parent().siblings().find("input").val()
-    localStorage.setItem(id, inputText)
-    console.log(inputText);
-});
-//need to work on local storage 
-// URL for help https://stackoverflow.com/questions/71813574/how-do-i-get-my-text-input-field-to-remember-previously-entered-data-by-using-lo
-function getlocalStorage() {
-    let inputval = JSON.parse(localStorage.getItem(inputText))
-    if(true){
-     
-     var text= $("").text(inputval)
-     console.log(inputval)
+// getting local storage of user input
+function getLocalStorage(key) {
+    let value = localStorage.getItem(key);
+    if (value) {
+      $(`#text${key}`).text(value);
     }
   }
+// rendering time blocks function
+$(document).ready(function () {
+   // inserting current date and time to the #currentDay element 
+  currentDayEl.text(moment().format("MMMM Do YYYY, h:mm:ss a"));
+  // looping through and building time blocks in the .container element
+  const containerEl = $(".container");
+  for (let i = 9; i < 18; i++) {
+    const rowEl = $(`<div data-time=${i} id='${i}' class="row">`);
+
+    const hourEl = $(
+      `<div class="col-sm-2 hour"> <p class="hourtext">${AMPM(i)}</p>`
+    );
+    rowEl.append(hourEl);
+
+    const eventEl = $(
+      `<div class="col-sm-8 past" id="textbox"><textarea id=text${i} class="textarea"></textarea>`
+    );
+    rowEl.append(eventEl);
+
+    const saveButtonEl = $(
+      `<div class="col-sm-2"><button class="saveBtn" id=${i}><i class="fas fa-save"></i></button>`
+    );
+    rowEl.append(saveButtonEl);
+
+    containerEl.append(rowEl);
+
+    getLocalStorage(i);
+  }
+
+  // correcting 24hour format and setting am or pm for hour text
+  function AMPM(hours) {
+    let ampm = "am";
+    if (hours >= 12) {
+      hours -= 12;
+      ampm = "pm";
+    }
+    if (hours === 0) {
+      hours = 12;
+    }
+    return `${hours}${ampm}`;
+  }
+
+  // TODO ******* finish logic with if else statements for color rendering
+  function getColors() {
+    const currentTime = new Date().getHours();
+    for (let i = 9; i < 18; i++) {
+      console.log(currentTime, $(`#${i}`).data("time"));
+    
+    }
+  }
+
+  setInterval(getColors, 1000);
+  // function to save user input into local storage 
+  $(".saveBtn").on("click", function () {
+    const eventId = $(this).attr("id");
+    const eventText = $(this)
+      .parent()
+      .siblings()
+      .children(".textarea")
+      .val();
+    localStorage.setItem(eventId, eventText);
+  });
+});
