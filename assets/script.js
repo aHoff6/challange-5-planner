@@ -58,12 +58,19 @@ $(document).ready(function () {
     return `${hours}${ampm}`;
   }
 
-  // TODO ******* finish logic with if else statements for color rendering
+  // function to get color rendering
   function getColors() {
     const currentTime = new Date().getHours();
     for (let i = 9; i < 18; i++) {
-      console.log(currentTime, $(`#${i}`).data("time"));
-    
+      console.log(
+        currentTime,
+        $(`#${i}`).data("time")
+      );
+      if ($(`#${i}`).data("time") == currentTime) {
+        $(`#text${i}`).addClass("present");
+      } else if (currentTime < $(`#${i}`).data("time")) {
+        $(`#text${i}`).addClass("future");
+      }
     }
   }
 
